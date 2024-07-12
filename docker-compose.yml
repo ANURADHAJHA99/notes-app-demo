@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: koyebdb
+      POSTGRES_USER: koyeb-adm
+      POSTGRES_PASSWORD: QS2Riwj0gkoC
+      POSTGRES_HOST: ep-autumn-shape-a2fl96f4.eu-central-1.pg.koyeb.app
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://koyeb-adm:QS2Riwj0gkoC@ep-autumn-shape-a2fl96f4.eu-central-1.pg.koyeb.app:5432/koyebdb
