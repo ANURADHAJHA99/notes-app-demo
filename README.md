@@ -152,11 +152,3 @@ To run the tests for this project, use the following command:
 ```sh
 python manage.py test
 ```
-
-## Contributing
-
-If you wish to contribute to this project, please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
