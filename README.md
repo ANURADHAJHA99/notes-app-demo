@@ -1,18 +1,18 @@
 
-# Notes Project
+# 📝 Notes Project
 
 This is a Django application that allows users to create and manage personal notes. The application supports user authentication and provides APIs for creating, reading, updating, and deleting notes.
 
-## Setup
+## 🛠️ Setup
 
-### Clone the Repository
+### 📂 Clone the Repository
 
 ```sh
 git clone https://github.com/ANURADHAJHA99/notes-app-demo
 cd notes_project
 ```
 
-### Set Up Environment Variables
+### 🔧 Set Up Environment Variables
 
 Create a `.env` file in the root directory with the following content:
 
@@ -24,26 +24,26 @@ DATABASE_HOST=ep-autumn-shape-a2fl96f4.eu-central-1.pg.koyeb.app
 DATABASE_PORT=5432
 ```
 
-### Build and Run the Docker Containers
+### 🐳 Build and Run the Docker Containers
 
 ```sh
 docker-compose up --build
 ```
 
-### Run Migrations and Create a Superuser
+### ⚙️ Run Migrations and Create a Superuser
 
 ```sh
 docker-compose run web python manage.py migrate
 docker-compose run web python manage.py createsuperuser
 ```
 
-### Access the Application
+### 🌐 Access the Application
 
 The application will be available at [http://localhost:8000](http://localhost:8000).
 
-## API Endpoints
+## 🔌 API Endpoints
 
-### User Registration
+### 🧑‍💻 User Registration
 
 **Endpoint:** POST `/api/users/`
 
@@ -55,7 +55,7 @@ The application will be available at [http://localhost:8000](http://localhost:80
 curl -X POST http://127.0.0.1:8000/api/users/ -H "Content-Type: application/json" -d '{"username": "testuser", "password": "testpass123"}'
 ```
 
-### Obtain Authentication Token
+### 🔑 Obtain Authentication Token
 
 **Endpoint:** POST `/api-token-auth/`
 
@@ -75,7 +75,7 @@ curl -X POST http://127.0.0.1:8000/api-token-auth/ -H "Content-Type: application
 }
 ```
 
-### Create a Note
+### 📝 Create a Note
 
 **Endpoint:** POST `/api/notes/`
 
@@ -87,7 +87,7 @@ curl -X POST http://127.0.0.1:8000/api-token-auth/ -H "Content-Type: application
 curl -X POST http://127.0.0.1:8000/api/notes/ -H "Content-Type: application/json" -H "Authorization: Token your_generated_token" -d '{"title": "Test Note", "body": "This is a test note."}'
 ```
 
-### List Notes
+### 📋 List Notes
 
 **Endpoint:** GET `/api/notes/`
 
@@ -99,7 +99,7 @@ curl -X POST http://127.0.0.1:8000/api/notes/ -H "Content-Type: application/json
 curl -X GET http://127.0.0.1:8000/api/notes/ -H "Authorization: Token your_generated_token"
 ```
 
-### Retrieve a Note
+### 🔍 Retrieve a Note
 
 **Endpoint:** GET `/api/notes/<id>/`
 
@@ -111,7 +111,7 @@ curl -X GET http://127.0.0.1:8000/api/notes/ -H "Authorization: Token your_gener
 curl -X GET http://127.0.0.1:8000/api/notes/1/ -H "Authorization: Token your_generated_token"
 ```
 
-### Update a Note
+### ✏️ Update a Note
 
 **Endpoint:** PUT `/api/notes/<id>/`
 
@@ -123,7 +123,7 @@ curl -X GET http://127.0.0.1:8000/api/notes/1/ -H "Authorization: Token your_gen
 curl -X PUT http://127.0.0.1:8000/api/notes/1/ -H "Content-Type: application/json" -H "Authorization: Token your_generated_token" -d '{"title": "Updated Test Note", "body": "This is an updated test note."}'
 ```
 
-### Delete a Note
+### 🗑️ Delete a Note
 
 **Endpoint:** DELETE `/api/notes/<id>/`
 
@@ -135,7 +135,7 @@ curl -X PUT http://127.0.0.1:8000/api/notes/1/ -H "Content-Type: application/jso
 curl -X DELETE http://127.0.0.1:8000/api/notes/1/ -H "Authorization: Token your_generated_token"
 ```
 
-## Summary of API Endpoints
+## 📑 Summary of API Endpoints
 
 - **User Registration:** POST `/api/users/`
 - **Obtain Authentication Token:** POST `/api-token-auth/`
@@ -145,7 +145,7 @@ curl -X DELETE http://127.0.0.1:8000/api/notes/1/ -H "Authorization: Token your_
 - **Update a Note:** PUT `/api/notes/<id>/`
 - **Delete a Note:** DELETE `/api/notes/<id>/`
 
-## Running Tests
+## 🧪 Running Tests
 
 To run the tests for this project, use the following command:
 
