@@ -1,6 +1,17 @@
-version: '3'
+version: '3.8'
 
 services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:8000 notes_project.wsgi:application
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
   db:
     image: postgres
     environment:
@@ -8,15 +19,4 @@ services:
       POSTGRES_USER: koyeb-adm
       POSTGRES_PASSWORD: QS2Riwj0gkoC
       POSTGRES_HOST: ep-autumn-shape-a2fl96f4.eu-central-1.pg.koyeb.app
-
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://koyeb-adm:QS2Riwj0gkoC@ep-autumn-shape-a2fl96f4.eu-central-1.pg.koyeb.app:5432/koyebdb
+      POSTGRES_PORT: 5432

@@ -152,3 +152,7 @@ To run the tests for this project, use the following command:
 ```sh
 python manage.py test
 ```
+
+## 🌐 Postman Collection
+You can access the Postman collection for this project here(https://www.postman.com/dark-resonance-874488/workspace/public/request/8821057-e8ee1036-bfd7-436b-a7cb-fcfbf2aa8fb0).
+
