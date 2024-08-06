@@ -8,7 +8,7 @@ This is a Django application that allows users to create and manage personal not
 ### 📂 Clone the Repository
 
 ```sh
-git clone https://github.com/ANURADHAJHA99/notes-app-demo
+git clone --recurse-submodules https://github.com/ANURADHAJHA99/multi-container-llm-app.git
 cd notes_project
 ```
 
